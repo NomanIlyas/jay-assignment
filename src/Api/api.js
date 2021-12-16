@@ -6,7 +6,7 @@ export const CallumAPI = {
   ],
   celebrity: {},
   all: function () {
-    return axios.get('https://myappprofile1440.herokuapp.com/profiles', {
+    return axios.get('https://jay-app-spring-api.herokuapp.com/profiles', {
 
 
     })
@@ -17,7 +17,7 @@ export const CallumAPI = {
   },
 
   getCelebrity: function (id) {
-    return axios.get(`https://myappprofile1440.herokuapp.com/profiles/${id}`, {
+    return axios.get(`https://jay-app-spring-api.herokuapp.com/profiles/${id}`, {
 
 
     })
@@ -40,7 +40,7 @@ export const CallumAPI = {
     formData.append('twitter',celebrity?.twitter);
     formData.append('email',celebrity?.email);
     formData.append('password',celebrity?.password);
-    return axios.post('https://myappprofile1440.herokuapp.com/profiles', formData, {
+    return axios.post('https://jay-app-spring-api.herokuapp.com/profiles', formData, {
 
     }).then(
       res => {
@@ -67,7 +67,7 @@ export const CallumAPI = {
     formData.append('password',celebrity?.facebook);
     formData.append('age', celebrity?.age);
     formData.append('file',celebrity.file);
-    return axios.put(`https://myappprofile1440.herokuapp.com/profiles/${id}`, formData, {
+    return axios.put(`https://jay-app-spring-api.herokuapp.com/profiles/${id}`, formData, {
 
     }).then(
       res => {
@@ -79,7 +79,7 @@ export const CallumAPI = {
 
   },
   deleteCelebrity: function (id) {
-    return axios.delete(`https://myappprofile1440.herokuapp.com/profiles/${id}`).then(
+    return axios.delete(`https://jay-app-spring-api.herokuapp.com/profiles/${id}`).then(
       res => {
         this.celebrity = res.data;
         return this.celebrity;
